@@ -1,0 +1,6 @@
+import UIKit
+import BaseFeature
+
+public class {{ name }}ViewController: BaseViewController {
+
+}
