@@ -11,8 +11,8 @@ let project = Project(
             module: .feature(.BaseFeature),
             dependencies: [
                 .feature(target: .BaseFeature, type: .interface),
-//        .shared(target: .DesignSystem),
-                .shared(target: .ThirdPartyLibrary, type: .interface),
+                .shared(target: .ThirdPartyLibrary),
+                .shared(target: .DesignSystem),
             ]
         ),
 

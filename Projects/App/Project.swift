@@ -2,6 +2,22 @@ import DependencyPlugin
 import EnvironmentPlugin
 import ProjectDescription
 
+let infoPlist: [String: Plist.Value] = [
+  "UILaunchStoryboardName": "LaunchScreen", // Launch screen configuration
+  "CFBundleVersion": "1", // Prevent bundle version error
+  "UIApplicationSceneManifest": [
+    "UIApplicationSupportsMultipleScenes": true,
+    "UISceneConfigurations": [
+      "UIWindowSceneSessionRoleApplication": [
+        [
+          "UISceneClassName": "UIWindowScene",
+          "UISceneDelegateClassName": "$(PRODUCT_MODULE_NAME).SceneDelegate"
+        ]
+      ]
+    ]
+  ]
+]
+
 let project = Project(
     name: environment.name,
     targets: [
@@ -14,12 +30,7 @@ let project = Project(
             bundleId: "\(environment.organizationName).\(environment.name)",
             deploymentTargets: environment.deploymentTargets,
             infoPlist: .extendingDefault(
-                with: [
-                    "UILaunchScreen": [
-                        "UIColorName": "",
-                        "UIImageName": "",
-                    ],
-                ]
+                with: infoPlist
             ),
             sources: ["Sources/**"],
             resources: ["Resources/**"],

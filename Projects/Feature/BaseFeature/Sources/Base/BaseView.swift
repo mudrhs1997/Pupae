@@ -1,4 +1,3 @@
-import DesignSystem
 import RxSwift
 import UIKit
 

@@ -8,45 +8,54 @@ private let template = Template(
         nameAttribute,
     ],
     items: [
-        // Project.swift
+        // MARK: - Project
+
         .file(
             path: "Projects/Feature/\(nameAttribute)Feature/Project.swift",
             templatePath: "Project.stencil"
         ),
 
-        // Implement
+        // MARK: - Scene
+
         .file(
             path: "Projects/Feature/\(nameAttribute)Feature/Sources/Presentatin/\(nameAttribute)ViewController.swift",
             templatePath: "Sources/Implement.stencil"
         ),
+
+        // MARK: - Coordinator
+
         .file(
             path: "Projects/Feature/\(nameAttribute)Feature/Sources/Coodinator/\(nameAttribute)Coordinator.swift",
             templatePath: "Sources/Implement.stencil"
         ),
 
-        // Demo
+        // MARK: - Assembly
+
+        .file(path: "Projects/Feature/\(nameAttribute)Feature/Sources/Assembly/\(nameAttribute)Assembly.swift", templatePath: "Sources/Assembly.stencil"),
+
+        // MARK: - Demo
+
         .file(
             path: "Projects/Feature/\(nameAttribute)Feature/Demo/Sources/AppDelegate.swift",
             templatePath: "Demo/Demo.stencil"
         ),
-        .file(
-            path: "Projects/Feature/\(nameAttribute)Feature/Demo/Resources/LaunchScreen.storyboard",
-            templatePath: "Demo/Demo.stencil"
-        ),
 
-        // Interface
+        // MARK: - Interface
+
         .file(
             path: "Projects/Feature/\(nameAttribute)Feature/Interface/\(nameAttribute)Factory.swift",
             templatePath: "Interface/Interface.stencil"
         ),
 
-        // Testing
+        // MARK: - Testing
+
         .file(
             path: "Projects/Feature/\(nameAttribute)Feature/Testing/Mock\(nameAttribute)Repository.swift",
             templatePath: "Testing/Testing.stencil"
         ),
 
-        // Test
+        // MARK: - Tests
+
         .file(
             path: "Projects/Feature/\(nameAttribute)Feature/Tests/\(nameAttribute)Tests.swift",
             templatePath: "Tests/Tests.stencil"
