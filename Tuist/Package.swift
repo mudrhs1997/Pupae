@@ -5,13 +5,13 @@ import PackageDescription
     import struct ProjectDescription.PackageSettings
 
     let packageSettings = PackageSettings(
-        productTypes: [:
-            //    "RxSwift": .framework,
-            //    "RxCocoa": .framework,
-            //    "RxCocoaRuntime": .framework,
-            //    "RxRelay": .framework,
-            //    "Swinject": .framework,
-            //    "Alamofire": .framework,
+        productTypes: [
+                "RxSwift": .framework,
+                "RxCocoa": .framework,
+                "RxCocoaRuntime": .framework,
+                "RxRelay": .framework,
+                "Swinject": .framework,
+                "Alamofire": .framework,
         ]
     )
 #endif

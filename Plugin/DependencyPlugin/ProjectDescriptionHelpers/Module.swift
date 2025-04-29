@@ -26,11 +26,12 @@ public enum Module {
 public extension Module {
     enum Feature: String, TargetPathConvertable, CaseIterable {
         case BaseFeature
-//        case RootFeature
-//        case MainFeature
-//        case SplashFeature
-//        case SigninFeature
-//        case SignupFeature
+        case RootFeature
+        case SplashFeature
+        case OnboardingFeature
+        case SigninFeature
+        case SignupFeature
+        case MainFeature
     }
 }
 
@@ -54,7 +55,7 @@ public extension Module {
 
 public extension Module {
     enum Shared: String, TargetPathConvertable {
-//        case DesignSystem
+        case DesignSystem
         case ThirdPartyLibrary
     }
 }

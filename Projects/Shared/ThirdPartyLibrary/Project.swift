@@ -5,7 +5,7 @@ import ProjectDescriptionHelpers
 let project = Project(
     name: Module.Shared.ThirdPartyLibrary.rawValue,
     targets: [
-        .interface(
+        .implement(
             module: .shared(.ThirdPartyLibrary),
             dependencies: [
                 .external(name: "RxSwift", condition: .none),

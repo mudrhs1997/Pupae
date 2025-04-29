@@ -1,4 +1,4 @@
-import BaseFeatureInterface
+import BaseFeature
 import RootFeature
 import SplashFeatureInterface
 import UIKit
@@ -11,10 +11,14 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
 
         let window = UIWindow(windowScene: scene)
-        guard let rootCoordinator = AppDelegate.container.resolve(RootCoordinator.self,
-                                                                  argument: window) else { return }
+        guard let rootCoordinator = AppDelegate
+            .container
+            .resolve(
+                RootCoordinator.self,
+                argument: window
+            ) else { return }
 
-        rootCoordinator.route(to: .splash)
+        rootCoordinator.start()
         self.window = window
     }
 }

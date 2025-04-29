@@ -1,4 +1,4 @@
---swiftversion 5.10
+--swiftversion 6.1
 
 # options
 --maxwidth 120
