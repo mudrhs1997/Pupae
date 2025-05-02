@@ -1,8 +1,9 @@
---swiftversion 6.1
+
+--exclude fastlane
 
 # options
---maxwidth 120
 --indent 2 # indent
+--maxwidth 120
 --ifdef no-indent # indent
 --trimwhitespace always # trailingSpace
 --lineaftermarks false # fileHeader

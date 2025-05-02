@@ -8,7 +8,7 @@
 import Foundation
 
 final class UserDefault {
-    static let userdeault = UserDefault()
+  static let userdeault = UserDefault()
 
 //    func setUserInfo(user: User) {
 //        UserDefaults.standard.set(user.account, forKey: "account")

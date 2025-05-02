@@ -1,4 +1,4 @@
 
 public protocol SignupFactory {
-    func makeCoordinator()
+  func makeCoordinator()
 }

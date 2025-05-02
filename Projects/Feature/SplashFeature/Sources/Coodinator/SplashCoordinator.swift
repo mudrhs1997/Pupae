@@ -2,24 +2,26 @@ import BaseFeature
 import UIKit
 
 public final class SplashCoordinator: BaseCoordinator {
-  private let navigationController = UINavigationController()
-    private let splashViewController: SplashViewController
+  private let splashRouter: SplashRouter
+  private let splashViewController: SplashViewController
 
-    override public var rootViewController: UINavigationController {
-        navigationController
-    }
+  override public var rootViewController: UINavigationController {
+    splashRouter.navigationController
+  }
 
-    init(
-        splashViewController: SplashViewController
-    ) {
-        self.splashViewController = splashViewController
-    }
+  init(
+    splashRouter: SplashRouter,
+    splashViewController: SplashViewController
+  ) {
+    self.splashRouter = splashRouter
+    self.splashViewController = splashViewController
+  }
 
-    override public func start() {
-        showSplashView()
-    }
+  override public func start() {
+    showSplashView()
+  }
 
-    private func showSplashView() {
-        rootViewController.setViewControllers([splashViewController], animated: true)
-    }
+  private func showSplashView() {
+    rootViewController.setViewControllers([splashViewController], animated: true)
+  }
 }

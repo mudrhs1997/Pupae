@@ -1,5 +1,5 @@
 
 
 public final class SplashTesting {
-    public init() {}
+  public init() {}
 }
