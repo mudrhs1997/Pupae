@@ -1,3 +1,8 @@
 import Foundation
 
-public protocol BaseViewModel {}
+public protocol ViewModel {
+  associatedtype Input
+  associatedtype Output
+
+  func transform(input: Input) -> Output
+}

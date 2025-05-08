@@ -1,4 +1,4 @@
 
 public protocol OnboardingFactory {
-    func makeCoordinator()
+  func makeCoordinator()
 }

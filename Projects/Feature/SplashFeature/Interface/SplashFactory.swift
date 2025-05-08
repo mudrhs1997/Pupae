@@ -1,5 +1,5 @@
 import BaseFeature
 
 public protocol SplashFactory {
-    func makeCoordinator() -> Coordinator
+  func makeCoordinator() -> Coordinator
 }

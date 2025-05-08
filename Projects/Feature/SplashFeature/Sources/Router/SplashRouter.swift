@@ -1,32 +1,34 @@
 import BaseFeature
+import UIKit
+import MainFeatureInterface
 
-// struct MainRoute: Route {}
-// struct SignInRoute: Route {}
-//
-// enum SplashRouterPath: RoutePath {
-//  case splash
-//  case main
-//  case signIn
-// }
-//
-// public final class SplashRouter: Router {
-//  typealias RoutePath = SplashRouterPath
-//  private weak var navigationController: UINavigationController?
-//
-//  init(navigationController: UINavigationController) {
-//    self.navigationController = navigationController
-//  }
-//
-//  public func route(to path: SplashRouterPath) {
-//    switch path {
-//    case .splash:
-//      let splashViewController = SplashViewController()
-//      navigationRouter.setRoot(splashViewController)
-//    case .main:
-//      print("Main")
-//    case .signIn:
-//      print("Sign In")
-//    }
-//  }
-//
-// }
+
+public enum SplashRouterPath: RoutePath {
+  case splash
+  case main
+  case signIn
+}
+
+public final class SplashRouter: Router {
+  public typealias RoutePath = SplashRouterPath
+  public var navigationController = UINavigationController()
+  private let splashViewController: SplashViewController
+
+  init(
+    splashViewController: SplashViewController,
+  ) {
+    self.splashViewController = splashViewController
+  }
+
+  public func route(to path: SplashRouterPath) {
+    switch path {
+    case .splash:
+      navigationController.setViewControllers([splashViewController], animated: true)
+    case .main:
+      print("Main")
+    case .signIn:
+      print("Sign In")
+    }
+  }
+
+}

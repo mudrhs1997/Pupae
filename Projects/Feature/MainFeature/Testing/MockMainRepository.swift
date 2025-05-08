@@ -1,5 +1,5 @@
 
 
 public final class MainTesting {
-    public init() {}
+  public init() {}
 }

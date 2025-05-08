@@ -1,5 +1,5 @@
 
 
 public final class SignupTesting {
-    public init() {}
+  public init() {}
 }

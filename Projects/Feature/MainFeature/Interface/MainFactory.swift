@@ -1,4 +1,4 @@
 
 public protocol MainFactory {
-    func makeCoordinator()
+  func makeCoordinator()
 }
