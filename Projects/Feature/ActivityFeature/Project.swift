@@ -20,7 +20,6 @@ let project = Project(
     .implement(
       module: .feature(.ActivityFeature),
       dependencies: [
-        .feature(target: .BaseFeature),
         .feature(target: .ActivityFeature, type: .interface),
       ]),
     .testing(
@@ -31,7 +30,7 @@ let project = Project(
     .interface(
       module: .feature(.ActivityFeature),
       dependencies: [
-
+        .feature(target: .BaseFeature),
       ]),
   ]
 )

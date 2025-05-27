@@ -5,7 +5,7 @@ import UIKit
 open class BaseViewController: UIViewController {
   // MARK: - Properties
 
-  private var disposeBag = DisposeBag()
+  public var disposeBag = DisposeBag()
   private let viewDidLoadSubject = PublishSubject<Void>()
   private let viewWillAppearSubject = PublishSubject<Void>()
   private let viewDidAppearSubject = PublishSubject<Void>()
