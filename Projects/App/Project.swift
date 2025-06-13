@@ -34,6 +34,7 @@ let project = Project(
       ),
       sources: ["Sources/**"],
       resources: ["Resources/**"],
+      entitlements: "Pupae.entitlements",
       dependencies: Module.Feature.allCases.map { .feature(target: $0) }
         + [
         ],

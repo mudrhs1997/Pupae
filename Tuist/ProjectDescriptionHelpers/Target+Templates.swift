@@ -7,7 +7,8 @@ import ProjectDescription
 public extension Target {
   static func demo(
     module: Module,
-    dependencies: [TargetDependency] = []
+    dependencies: [TargetDependency] = [],
+    hasEntitlements: Bool = false
   ) -> Target {
     let moduleName = module.targetName(type: .demo)
     return .target(
@@ -22,11 +23,14 @@ public extension Target {
       ]),
       sources: ["Demo/Sources/**"],
       resources: ["Demo/Resources/**"],
+      entitlements: hasEntitlements ? .file(path: "Demo/\(moduleName).entitlements") : nil,
       dependencies: dependencies,
-      settings: .settings(configurations: [
-        .debug(name: "Debug"),
-        .release(name: "Release"),
-      ])
+      settings: .settings(
+        base: ["DEVELOPE_TEAM": "KL2HAQ9H72"],
+        configurations: [
+          .debug(name: "Debug"),
+          .release(name: "Release"),
+        ])
     )
   }
 }

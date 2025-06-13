@@ -10,7 +10,9 @@ let project = Project(
       module: .feature(.ActivityFeature),
       dependencies: [
         .feature(target: .ActivityFeature),
-      ]),
+      ],
+      hasEntitlements: true
+    ),
     .tests(
       module: .feature(.ActivityFeature),
       dependencies: [
