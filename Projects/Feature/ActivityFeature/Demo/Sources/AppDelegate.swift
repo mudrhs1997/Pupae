@@ -37,19 +37,23 @@ import FamilyControls
 
 @main
 struct ActivityFeatureDemo: App {
-  let center = AuthorizationCenter.shared
+  let authorizationCenter = AuthorizationCenter.shared
   @StateObject var model = ActivityViewModel()
 
   var body: some Scene {
     WindowGroup {
       VStack {
-        ExampleView()
-          .environmentObject(model)
+          ScreenTimeSelectAppsContentView(model: model)
+//          ExampleView(
+//            selectedApps: model.selection.applicationTokens,
+//            selectedCategories: model.selection.categoryTokens,
+//            selectedWebDomains: model.selection.webDomainTokens
+//          )
       }
       .onAppear {
         Task {
           do {
-            try await center.requestAuthorization(for: .individual)
+            try await authorizationCenter.requestAuthorization(for: .individual)
           } catch {
             print("Failure to enroll with error: \(error)")
           }

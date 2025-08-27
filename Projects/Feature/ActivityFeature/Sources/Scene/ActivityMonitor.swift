@@ -25,21 +25,31 @@ class ScheduleModel {
 }
 
 class MyMonitor: DeviceActivityMonitor {
-  let model = ActivityViewModel()
+    let model: ActivityViewModel
+    let center: DeviceActivityCenter
+
+    init(
+        model: ActivityViewModel,
+        center: DeviceActivityCenter
+    ) {
+        self.model = model
+        self.center = center
+    }
 
   override func intervalDidStart(for activity: DeviceActivityName) {
     super.intervalDidStart(for: activity)
 
-    let socialStore = ManagedSettingsStore(named: .social)
-    socialStore.clearAllSettings()
+      do {
+          try center.startMonitoring(.daily, during: schedule)
+      } catch {
+          print("monitoring Error")
+      }
   }
 
   override func intervalDidEnd(for activity: DeviceActivityName) {
     super.intervalDidEnd(for: activity)
-    let socialStore = ManagedSettingsStore(named: .social)
-    let socialCategory = model.selection.categoryTokens
-    //    socialStore.shield.applicationCategories = .specific([socialCategory])
-    //    socialStore.shield.webDomainCategories = .specific([socialCategory])
+
+      center.stopMonitoring()
   }
 }
 
