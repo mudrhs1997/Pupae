@@ -28,7 +28,8 @@ final class SplashViewModel: ViewModel {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
           self.router.route(to: .main)
         }
-      }.disposed(by: disposeBag)
+      }
+      .disposed(by: disposeBag)
 
     return output
   }

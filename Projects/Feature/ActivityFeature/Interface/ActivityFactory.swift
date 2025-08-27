@@ -1,4 +1,6 @@
+import BaseFeature
+
 
 public protocol ActivityFactory {
-  func makeCoordinator()
+  func makeCoordinator() -> Coordinator
 }

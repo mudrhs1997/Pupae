@@ -10,18 +10,17 @@ let project = Project(
     .implement(
       module: .feature(.BaseFeature),
       dependencies: [
-        .feature(target: .BaseFeature, type: .interface),
+//        .feature(target: .BaseFeature, type: .interface),
         .shared(target: .ThirdPartyLibrary),
         .shared(target: .DesignSystem),
       ]
     ),
-
     // MARK: - Interface
 
-    .interface(
-      module: .feature(.BaseFeature),
-      dependencies: [
-      ]
-    ),
+//    .interface(
+//      module: .feature(.BaseFeature),
+//      dependencies: [
+//      ]
+//    ),
   ]
 )
